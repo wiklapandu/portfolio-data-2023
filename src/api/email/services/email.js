@@ -15,8 +15,6 @@ module.exports = {
             .replace('{{urlSite}}', process.env.URL_APP),
         });
 
-        console.log(file);
-
         return response;
     }
 }
