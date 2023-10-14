@@ -5,7 +5,8 @@ module.exports = {
         emailServices.SendEmail(ctx.request.body);
 
         ctx.send({
-            success: true
+            success: true,
+            message: 'Success Sending email to wikla'
         });
     }
 }

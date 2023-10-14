@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "Setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "baseIn": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    }
+  }
+}

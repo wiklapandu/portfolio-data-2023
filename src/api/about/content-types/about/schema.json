@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "yearExperience": {
+      "type": "string"
+    },
+    "projectCompleted": {
+      "type": "string"
+    },
+    "happyClients": {
+      "type": "integer"
+    },
+    "experiences": {
+      "displayName": "Experience Job",
+      "type": "component",
+      "repeatable": true,
+      "component": "jobs.experience-job"
+    },
+    "experienceSubtitle": {
+      "type": "string"
+    }
+  }
+}

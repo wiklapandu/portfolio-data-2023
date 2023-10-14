@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_jobs_experience_jobs",
+  "info": {
+    "displayName": "Experience Job",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "signIn": {
+      "type": "date"
+    },
+    "resign": {
+      "type": "date"
+    },
+    "location": {
+      "type": "string"
+    },
+    "roleTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

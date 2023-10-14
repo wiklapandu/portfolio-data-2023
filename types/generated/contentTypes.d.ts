@@ -677,6 +677,41 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutAbout extends Schema.SingleType {
+  collectionName: 'abouts';
+  info: {
+    singularName: 'about';
+    pluralName: 'abouts';
+    displayName: 'About';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.Text;
+    yearExperience: Attribute.String;
+    projectCompleted: Attribute.String;
+    happyClients: Attribute.Integer;
+    experiences: Attribute.Component<'jobs.experience-job', true>;
+    experienceSubtitle: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about.about',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
@@ -772,6 +807,40 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiSettingSetting extends Schema.SingleType {
+  collectionName: 'settings';
+  info: {
+    singularName: 'setting';
+    pluralName: 'settings';
+    displayName: 'Setting';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    baseIn: Attribute.String;
+    email: Attribute.String;
+    phone: Attribute.String;
+    language: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::setting.setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::setting.setting',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -788,9 +857,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about.about': ApiAboutAbout;
       'api::blog.blog': ApiBlogBlog;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::service.service': ApiServiceService;
+      'api::setting.setting': ApiSettingSetting;
     }
   }
 }
